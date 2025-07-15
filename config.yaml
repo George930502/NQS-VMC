@@ -15,7 +15,7 @@ dissociation_curve:
 
 # Parameters for the Variational Monte Carlo (VMC) simulation
 vmc_params:
-  n_epochs: 150
+  n_epochs: 100
   n_samples: 1000
   learning_rate: 0.05
   burn_in_steps: 100  # Burn-in for the Metropolis-Hastings sampler
@@ -24,4 +24,4 @@ vmc_params:
 # Parameters for the RBM model
 rbm_params:
   # The number of hidden units will be n_orbitals * alpha
-  alpha: 1
+  alpha: 2
