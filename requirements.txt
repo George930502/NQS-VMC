@@ -1,0 +1,6 @@
+pyscf
+openfermion
+torch 
+matplotlib
+numpy
+PyYAML
