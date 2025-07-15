@@ -9,8 +9,8 @@ molecule_name: 'H2'
 # Configuration for potential energy surface scan (for diatomic molecules)
 dissociation_curve:
   enabled: true
-  start_separation: 0.5   # in Angstrom
-  end_separation: 2.5     # in Angstrom
+  start_separation: 0.8   # in Angstrom
+  end_separation: 2.2     # in Angstrom
   points: 15              # Number of points to compute
 
 # Parameters for the Variational Monte Carlo (VMC) simulation
@@ -24,4 +24,4 @@ vmc_params:
 # Parameters for the RBM model
 rbm_params:
   # The number of hidden units will be n_orbitals * alpha
-  alpha: 2
+  alpha: 1
