@@ -1,0 +1,33 @@
+# ----------------------------------------------------
+# Configuration for the QCCNN Quantum Chemistry Simulation
+# ----------------------------------------------------
+
+# Specify the target molecule.
+# 'N2' (14 orbitals) is a good choice for the default QCCNN architecture.
+# Other options: 'H2', 'LiH', 'C2', 'NH3', 'H2O_STO-3G', 'H2O_6-31G'
+molecule_name: 'H2'
+
+# Configuration for potential energy surface scan
+dissociation_curve:
+  enabled: false
+  start_separation: 0.8
+  end_separation: 2.2
+  points: 15
+
+# Parameters for the Variational Monte Carlo (VMC) simulation
+vmc_params:
+  n_epochs: 200
+  n_samples: 100
+  n_chains: 10
+  burn_in_steps: 0
+  step_intervals: 10
+  learning_rate: 0.05
+  sr_regularization: 0.01
+
+# Parameters for the QCCNN model
+qccnn_params:
+  num_conv_layers: 1      # Number of consecutive QConv1d layers
+  kernel_size: 2          # Kernel size for all QConv1d layers
+  out_channels: 1         # Number of output channels for each QConv1d layer
+  n_layers_quantum: 1     # Number of layers in the quantum circuit (PQC)
+  ffnn_hidden_size: 16    # Number of hidden units in the final FFNN
