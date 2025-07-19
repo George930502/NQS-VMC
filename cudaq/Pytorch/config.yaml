@@ -1,0 +1,29 @@
+# ----------------------------------------------------
+# Configuration for the RBM Quantum Chemistry Simulation
+# ----------------------------------------------------
+
+# Specify the target molecule.
+# Available options: 'H2', 'LiH', 'C2', 'N2', 'NH3', 'H2O_STO-3G', 'H2O_6-31G'
+molecule_name: 'H2'
+
+# Configuration for potential energy surface scan (for diatomic molecules)
+dissociation_curve:
+  enabled: true
+  start_separation: 0.8   # in Angstrom
+  end_separation: 2.2     # in Angstrom
+  points: 15              # Number of points to compute
+
+# Parameters for the Variational Monte Carlo (VMC) simulation
+vmc_params:
+  n_epochs: 200
+  n_samples: 10000         # Total samples per epoch (distributed across chains)
+  n_chains: 1024             # Number of parallel MCMC chains for sampling
+  burn_in_steps: 500        # Burn-in steps for each parallel chain
+  step_intervals: 10         # Steps between samples in each chain
+  learning_rate: 0.05
+  sr_regularization: 0.01   # Regularization for Stochastic Reconfiguration
+
+# Parameters for the RBM model
+rbm_params:
+  # The number of hidden units will be n_orbitals * alpha
+  alpha: 1
